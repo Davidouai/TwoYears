@@ -464,15 +464,16 @@ button {
 
   .eyebrow {
     font-size: 0.78rem;
-    margin-bottom: 6px;
+    margin-bottom: 5px;
   }
 
   .hero h1 {
-    font-size: 1.3rem;
+    font-size: 1.25rem;
   }
 
   .hero p:not(.eyebrow) {
-    display: none;
+    font-size: 0.78rem;
+    margin-top: 5px;
   }
 
   .stage-header {
@@ -497,16 +498,17 @@ button {
   }
 
   .eyebrow {
-    font-size: 0.7rem;
-    margin-bottom: 4px;
+    font-size: 0.68rem;
+    margin-bottom: 3px;
   }
 
   .hero h1 {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .hero p:not(.eyebrow) {
-    display: none;
+    font-size: 0.72rem;
+    margin-top: 3px;
   }
 
   .score-chip {

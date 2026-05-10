@@ -270,8 +270,7 @@ function nextStage() {
 
 function showFinalScreen() {
   finalHelpCount.textContent = totalHelpUsed;
-  const bestText = totalHelpUsed <= 6 ? "Excellent ! ⭐" : totalHelpUsed <= 10 ? "Super score ! 🌟" : "Bien joué ! 💪";
-  finalMessage.textContent = `${bestText} Tu as bien navigué entre mystère et souvenir.`;
+  finalMessage.textContent = `Un score exceptionnel qui me fait t'aimer encore plus !`;
   finalScreen.classList.remove("hidden");
 }
 

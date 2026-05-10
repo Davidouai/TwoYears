@@ -4,6 +4,7 @@ window.SOUVENIRS_DATA = [
     title: "Walibi",
     answer: "Walibi",
     media: [
+      { type: "video", src: "resources/souvenirs/1 - Walibi/IMG_0255.mp4" },
       { type: "image", src: "resources/souvenirs/1 - Walibi/IMG_3270.JPG" }
     ]
   },
@@ -22,9 +23,9 @@ window.SOUVENIRS_DATA = [
     title: "Velorail",
     answer: "Velorail",
     media: [
-      { type: "video", src: "resources/souvenirs/3 - Velorail/IMG_4841.MP4" },
+      { type: "image", src: "resources/souvenirs/3 - Velorail/IMG_4819.JPEG" },
       { type: "image", src: "resources/souvenirs/3 - Velorail/IMG_4832.JPEG" },
-      { type: "image", src: "resources/souvenirs/3 - Velorail/IMG_4819.JPEG" }
+      { type: "video", src: "resources/souvenirs/3 - Velorail/IMG_4841.MP4" }
     ]
   },
   {
@@ -32,10 +33,10 @@ window.SOUVENIRS_DATA = [
     title: "Cabanes de Provence",
     answer: "Cabanes de Provence",
     media: [
-      { type: "image", src: "resources/souvenirs/4 - Cabanes de provence/IMG_6009.jpg" },
-      { type: "image", src: "resources/souvenirs/4 - Cabanes de provence/IMG_5997.JPEG" },
+      { type: "image", src: "resources/souvenirs/4 - Cabanes de provence/IMG_5983.JPEG" },
       { type: "image", src: "resources/souvenirs/4 - Cabanes de provence/IMG_5993.JPEG" },
-      { type: "image", src: "resources/souvenirs/4 - Cabanes de provence/IMG_5983.JPEG" }
+      { type: "image", src: "resources/souvenirs/4 - Cabanes de provence/IMG_5997.JPEG" },
+      { type: "image", src: "resources/souvenirs/4 - Cabanes de provence/IMG_6009.jpg" }
     ]
   },
   {
@@ -43,8 +44,8 @@ window.SOUVENIRS_DATA = [
     title: "Ski 2 Alpes",
     answer: "Ski 2 Alpes",
     media: [
-      { type: "image", src: "resources/souvenirs/5 - Ski 2 alpes/IMG_6325.JPEG" },
-      { type: "image", src: "resources/souvenirs/5 - Ski 2 alpes/51C0E876-B66F-483B-998C-4CF3A210670E.jpg" }
+      { type: "image", src: "resources/souvenirs/5 - Ski 2 alpes/51C0E876-B66F-483B-998C-4CF3A210670E.jpg" },
+      { type: "image", src: "resources/souvenirs/5 - Ski 2 alpes/IMG_6325.JPEG" }
     ]
   },
   {
@@ -52,11 +53,11 @@ window.SOUVENIRS_DATA = [
     title: "Anniv Julie",
     answer: "Anniv Julie",
     media: [
-      { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_9110.JPEG" },
-      { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_9107.JPEG" },
-      { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_9075.JPEG" },
+      { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_8471.JPEG" },
       { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_8486.JPEG" },
-      { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_8471.JPEG" }
+      { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_9075.JPEG" },
+      { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_9107.JPEG" },
+      { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_9110.JPEG" }
     ]
   },
   {
@@ -64,8 +65,8 @@ window.SOUVENIRS_DATA = [
     title: "Mariage demdem & eva",
     answer: "Mariage demdem et eva",
     media: [
-      { type: "image", src: "resources/souvenirs/7 - Marriage demdem & eva/IMG_9052.JPEG" },
-      { type: "image", src: "resources/souvenirs/7 - Marriage demdem & eva/IMG_9007.JPEG" }
+      { type: "image", src: "resources/souvenirs/7 - Marriage demdem & eva/IMG_9007.JPEG" },
+      { type: "image", src: "resources/souvenirs/7 - Marriage demdem & eva/IMG_9052.JPEG" }
     ]
   },
   {
@@ -73,6 +74,7 @@ window.SOUVENIRS_DATA = [
     title: "Concert Colt",
     answer: "Concert Colt",
     media: [
+      { type: "video", src: "resources/souvenirs/8 - Concert Colt/IMG_6822.mp4" },
       { type: "image", src: "resources/souvenirs/8 - Concert Colt/IMG_6832.JPEG" }
     ]
   },
@@ -81,8 +83,8 @@ window.SOUVENIRS_DATA = [
     title: "Plongée Marseille",
     answer: "Plongée Marseille",
     media: [
-      { type: "image", src: "resources/souvenirs/9 - Plongée Marseille/IMG_6969.JPEG" },
-      { type: "image", src: "resources/souvenirs/9 - Plongée Marseille/IMG_0037.JPEG" }
+      { type: "image", src: "resources/souvenirs/9 - Plongée Marseille/IMG_0037.JPEG" },
+      { type: "image", src: "resources/souvenirs/9 - Plongée Marseille/IMG_6969.JPEG" }
     ]
   },
   {
@@ -90,7 +92,9 @@ window.SOUVENIRS_DATA = [
     title: "Theodora",
     answer: "Theodora",
     media: [
-      { type: "image", src: "resources/souvenirs/10 - Theodora/IMG_7132.jpg" }
+      { type: "image", src: "resources/souvenirs/10 - Theodora/IMG_7124.jpg" },
+      { type: "image", src: "resources/souvenirs/10 - Theodora/IMG_7132.jpg" },
+      { type: "video", src: "resources/souvenirs/10 - Theodora/IMG_7146.MP4" }
     ]
   },
   {
@@ -98,9 +102,9 @@ window.SOUVENIRS_DATA = [
     title: "Anniv Zoé",
     answer: "Anniv Zoé",
     media: [
+      { type: "image", src: "resources/souvenirs/11 - Anniv zoé/IMG_7322.JPEG" },
       { type: "image", src: "resources/souvenirs/11 - Anniv zoé/IMG_9795.JPEG" },
-      { type: "image", src: "resources/souvenirs/11 - Anniv zoé/IMG_9800.JPEG" },
-      { type: "image", src: "resources/souvenirs/11 - Anniv zoé/IMG_7322.JPEG" }
+      { type: "image", src: "resources/souvenirs/11 - Anniv zoé/IMG_9800.JPEG" }
     ]
   },
   {
@@ -109,9 +113,9 @@ window.SOUVENIRS_DATA = [
     answer: "Match PSG et Paris",
     media: [
       { type: "image", src: "resources/souvenirs/12 - Match PSG & Paris/IMG_0139.JPEG" },
-      { type: "image", src: "resources/souvenirs/12 - Match PSG & Paris/IMG_7476.JPEG" },
+      { type: "image", src: "resources/souvenirs/12 - Match PSG & Paris/IMG_0164.JPEG" },
       { type: "image", src: "resources/souvenirs/12 - Match PSG & Paris/IMG_0243.JPEG" },
-      { type: "image", src: "resources/souvenirs/12 - Match PSG & Paris/IMG_0164.JPEG" }
+      { type: "image", src: "resources/souvenirs/12 - Match PSG & Paris/IMG_7476.JPEG" }
     ]
   },
   {
@@ -119,9 +123,9 @@ window.SOUVENIRS_DATA = [
     title: "Puppy yoga",
     answer: "Puppy yoga",
     media: [
-      { type: "video", src: "resources/souvenirs/13 - Puppy yoga/IMG_7562.MP4" },
+      { type: "image", src: "resources/souvenirs/13 - Puppy yoga/IMG_1426.JPEG" },
       { type: "image", src: "resources/souvenirs/13 - Puppy yoga/IMG_7560.JPEG" },
-      { type: "image", src: "resources/souvenirs/13 - Puppy yoga/IMG_1426.JPEG" }
+      { type: "video", src: "resources/souvenirs/13 - Puppy yoga/IMG_7562.MP4" }
     ]
   },
   {

@@ -5,6 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deux ans ensemble</title>
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    (function () {
+      var prevHeight = 0;
+      function setVH() {
+        var h = window.innerHeight;
+        document.documentElement.style.setProperty('--vh', h * 0.01 + 'px');
+        if (h > prevHeight && prevHeight > 0) {
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+        }
+        prevHeight = h;
+      }
+      setVH();
+      window.addEventListener('resize', setVH);
+      window.addEventListener('orientationchange', function () { setTimeout(setVH, 150); });
+    })();
+  </script>
 </head>
 <body>
   <div class="app-shell">

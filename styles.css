@@ -457,32 +457,72 @@ button {
 }
 
 @media (max-width: 820px), (max-height: 780px) {
+  .app-shell {
+    gap: 8px;
+    padding: 10px;
+  }
+
   .hero {
     min-height: auto;
-    padding: 10px 14px;
+    padding: 8px 14px;
   }
 
   .eyebrow {
-    font-size: 0.78rem;
-    margin-bottom: 5px;
+    font-size: 0.75rem;
+    margin-bottom: 4px;
   }
 
   .hero h1 {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 
   .hero p:not(.eyebrow) {
-    font-size: 0.78rem;
-    margin-top: 5px;
+    font-size: 0.75rem;
+    margin-top: 4px;
+  }
+
+  .progress {
+    margin: 4px 0 4px;
+  }
+
+  .progress-label {
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+  }
+
+  .stepper {
+    margin-top: 8px;
+    gap: 0.35rem;
+  }
+
+  .step {
+    width: 30px;
+    height: 30px;
+    font-size: 0.82rem;
+  }
+
+  .stage-panel {
+    padding: 10px 14px 8px;
   }
 
   .stage-header {
     flex-direction: row;
     align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .help-gauge {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .controls {
+    gap: 4px;
+    padding-top: 6px;
   }
 
   .button {
-    padding: 10px 14px;
+    padding: 9px 14px;
   }
 }
 

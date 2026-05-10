@@ -10,9 +10,9 @@
   <div class="app-shell">
     <header class="hero">
       <div class="hero-copy">
-        <p class="eyebrow">Joyeux 2 ans</p>
-        <h1>Retrouve nos 14 souvenirs</h1>
-        <p>Chaque image ou vidéo est un indice. Tape le nom de l'activité pour avancer.</p>
+        <p class="eyebrow">Joyeux 2 ans 🎉</p>
+        <h1>Retrouve nos <span id="totalSteps">14</span> souvenirs 🧩</h1>
+        <p>Chaque photo ou vidéo est un indice. Tape le nom de l'activité pour avancer ✨</p>
       </div>
     </header>
 
@@ -30,9 +30,9 @@
       <div class="stage-panel">
         <div class="stage-header">
           <div class="stage-info">
-            <p class="stage-subtitle">Étape <strong id="stageName">1</strong> / 14</p>
+            <p class="stage-subtitle">Étape <strong id="stageName">1</strong> / <span id="stageTotal">14</span></p>
           </div>
-          <div class="score-chip">Aides : <strong id="helpCount">0</strong></div>
+          <div class="score-chip">💡 <strong id="helpCount">0</strong> aide(s)</div>
         </div>
 
         <div class="help-gauge">
@@ -51,7 +51,7 @@
           <div class="answer-form">
             <input id="guessInput" type="text" placeholder="Ex : Croatie" autocomplete="off" />
             <div class="actions">
-              <button id="helpBtn" class="button secondary" type="button">Aide</button>
+              <button id="helpBtn" class="button secondary" type="button">💡 Aide</button>
               <button id="submitBtn" class="button primary" type="button">Valider</button>
             </div>
             <p id="feedbackText" class="feedback"></p>
@@ -61,7 +61,7 @@
 
       <div id="finalScreen" class="modal hidden">
         <div class="modal-card">
-          <h2>Bravo, tu as terminé !</h2>
+          <h2>Bravo, tu as terminé ! 🎊</h2>
           <p>Tu as utilisé <strong id="finalHelpCount">0</strong> aides pour retrouver nos souvenirs.</p>
           <p id="finalMessage">Ce score est magique, et chaque étape raconte notre histoire.</p>
           <button id="restartBtn" class="button primary" type="button">Recommencer</button>

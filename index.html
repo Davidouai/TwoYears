@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deux ans ensemble</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">Joyeux 2 ans</p>
+        <h1>Retrouve nos 14 souvenirs</h1>
+        <p>Chaque image ou vidéo est un indice. Tape le nom de l'activité pour avancer.</p>
+      </div>
+    </header>
+
+    <section class="progress">
+      <div class="progress-label">
+        <span id="progressText">Étape 1 / 14</span>
+      </div>
+      <div class="progress-bar">
+        <div id="progressFill" class="progress-fill"></div>
+      </div>
+      <div id="stepper" class="stepper"></div>
+    </section>
+
+    <main class="game">
+      <div class="stage-panel">
+        <div class="stage-header">
+          <div class="stage-info">
+            <p class="stage-subtitle">Étape <strong id="stageName">1</strong> / 14</p>
+          </div>
+          <div class="score-chip">Aides : <strong id="helpCount">0</strong></div>
+        </div>
+
+        <div class="help-gauge">
+          <div class="help-gauge-label">
+            <span>Défloutage</span>
+            <strong id="helpGaugeText">0 / 5</strong>
+          </div>
+          <div class="help-gauge-bar">
+            <div id="helpGaugeFill" class="help-gauge-fill"></div>
+          </div>
+        </div>
+
+        <div id="mediaGrid" class="media-grid"></div>
+
+        <div class="controls">
+          <div class="answer-form">
+            <input id="guessInput" type="text" placeholder="Ex : Croatie" autocomplete="off" />
+            <div class="actions">
+              <button id="helpBtn" class="button secondary" type="button">Aide</button>
+              <button id="submitBtn" class="button primary" type="button">Valider</button>
+            </div>
+            <p id="feedbackText" class="feedback"></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="finalScreen" class="modal hidden">
+        <div class="modal-card">
+          <h2>Bravo, tu as terminé !</h2>
+          <p>Tu as utilisé <strong id="finalHelpCount">0</strong> aides pour retrouver nos souvenirs.</p>
+          <p id="finalMessage">Ce score est magique, et chaque étape raconte notre histoire.</p>
+          <button id="restartBtn" class="button primary" type="button">Recommencer</button>
+        </div>
+      </div>
+    </main>
+  </div>
+  <div id="confetti" class="confetti"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

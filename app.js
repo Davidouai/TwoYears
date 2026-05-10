@@ -220,6 +220,18 @@ function submitAnswer() {
   if (solved) { nextStage(); return; }
   const stage = data[currentIndex];
   const guess = guessInput.value.trim();
+
+  const cheat = normalizeText(guess).match(/^etape\s+(\d+)$/);
+  if (cheat) {
+    const target = parseInt(cheat[1], 10) - 1;
+    if (target >= 0 && target < totalSteps) {
+      for (let i = 0; i < target; i++) solvedStages[i] = true;
+      currentIndex = target;
+      currentHelpLevel = helpByStage[currentIndex] || 0;
+      renderStage();
+    }
+    return;
+  }
   if (!guess) {
     feedbackText.textContent = "Écris un mot pour commencer.";
     feedbackText.style.color = "#8b6f72";

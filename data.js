@@ -50,8 +50,8 @@ window.SOUVENIRS_DATA = [
   },
   {
     id: 6,
-    title: "Anniv Julie",
-    answer: "Anniv Julie",
+    title: "Anniversaire Julie",
+    answer: "Anniversaire Julie",
     media: [
       { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_8471.JPEG" },
       { type: "image", src: "resources/souvenirs/6 - Anniv julie/IMG_8486.JPEG" },
@@ -99,8 +99,8 @@ window.SOUVENIRS_DATA = [
   },
   {
     id: 11,
-    title: "Anniv Zoé",
-    answer: "Anniv Zoé",
+    title: "Anniversaire Zoé",
+    answer: "Anniversaire Zoé",
     media: [
       { type: "image", src: "resources/souvenirs/11 - Anniv zoé/IMG_7322.JPEG" },
       { type: "image", src: "resources/souvenirs/11 - Anniv zoé/IMG_9795.JPEG" },

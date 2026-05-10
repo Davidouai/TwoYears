@@ -1,14 +1,14 @@
 :root {
   color-scheme: light;
-  --bg: #fde8e2;
-  --surface: #fff8f6;
-  --surface-soft: rgba(255, 252, 250, 0.97);
-  --text: #3d2020;
-  --muted: #9e6060;
-  --accent: #e8948a;
-  --accent-strong: #c86a5e;
-  --border: rgba(200, 106, 94, 0.2);
-  --shadow: 0 20px 60px rgba(200, 106, 94, 0.16);
+  --bg: #fce4ee;
+  --surface: #fff5f8;
+  --surface-soft: rgba(255, 248, 252, 0.97);
+  --text: #3a1525;
+  --muted: #8a4460;
+  --accent: #e8708a;
+  --accent-strong: #c84868;
+  --border: rgba(200, 72, 104, 0.22);
+  --shadow: 0 20px 60px rgba(200, 72, 104, 0.18);
 }
 
 * {
@@ -19,7 +19,7 @@ html {
   margin: 0;
   min-height: 100%;
   /* fixed attachment ensures this always covers the full viewport, regardless of element size */
-  background: linear-gradient(135deg, #ffd0c4 0%, #fde8e2 48%, #ffc8de 100%);
+  background: linear-gradient(135deg, #ffc8a8 0%, #fce4ee 46%, #ffb8cc 100%);
   background-attachment: fixed;
 }
 
@@ -60,7 +60,7 @@ button {
   overflow: hidden;
   min-height: 140px;
   max-height: 160px;
-  background: linear-gradient(180deg, rgba(255, 252, 250, 0.88), rgba(255, 235, 228, 0.76)),
+  background: linear-gradient(180deg, rgba(255, 248, 252, 0.88), rgba(255, 228, 238, 0.76)),
     url("resources/theme/header.jpg") center/cover no-repeat;
   box-shadow: var(--shadow);
   box-shadow: var(--shadow);
@@ -74,8 +74,8 @@ button {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgba(255, 245, 240, 0.4), transparent 32%),
-    radial-gradient(circle at bottom right, rgba(200, 106, 94, 0.18), transparent 36%);
+    radial-gradient(circle at top left, rgba(255, 245, 250, 0.4), transparent 32%),
+    radial-gradient(circle at bottom right, rgba(200, 72, 104, 0.22), transparent 36%);
 }
 
 .hero-copy {
@@ -268,7 +268,7 @@ button {
   overflow: hidden;
   flex: 1 1 0;
   min-width: 0;
-  background: #7a2e3c;
+  background: #6a1e40;
   border: 1px solid rgba(255, 220, 210, 0.15);
 }
 
@@ -305,7 +305,7 @@ button {
   inset: 0;
   display: grid;
   place-items: center;
-  background: rgba(60, 18, 28, 0.68);
+  background: rgba(50, 10, 30, 0.68);
   color: white;
   text-align: center;
   font-size: clamp(1.8rem, 2.4vw, 3rem);
@@ -410,7 +410,7 @@ button {
   z-index: 20;
   display: grid;
   place-items: center;
-  background: rgba(60, 18, 28, 0.48);
+  background: rgba(50, 10, 30, 0.48);
 }
 
 .modal.hidden {

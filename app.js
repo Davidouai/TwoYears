@@ -194,7 +194,7 @@ function renderStage() {
 
 function showSuccessMessage(stage) {
   feedbackText.textContent = `🎉 Bravo ! C'était bien ${stage.answer}.`;
-  feedbackText.style.color = "#3c1052";
+  feedbackText.style.color = "#3a1525";
 }
 
 function startConfetti() {

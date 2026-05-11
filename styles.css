@@ -290,17 +290,19 @@ button {
   display: block;
   object-fit: contain;
   background: transparent;
-  transition: filter 0.35s ease;
 }
 
 .media.blur {
-  filter: blur(22px) brightness(0.7);
-  transform: scale(1.03);
+  filter: grayscale(1) brightness(0.5);
 }
 
 .media-card.revealed .media {
   filter: none;
-  transform: scale(1);
+  transform: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: auto;
 }
 
 .media-overlay {

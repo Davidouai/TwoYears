@@ -3,8 +3,9 @@ const totalSteps = data.length;
 let currentIndex = 0;
 let totalHelpUsed = 0;
 let currentHelpLevel = 0;
-const helpLevels = [24, 20, 16, 12, 8, 4, 0];
-const maxHelpLevel = helpLevels.length - 1;
+// fraction of container size the image is rendered at before scaling back up
+const pixelScales = [0, 1/24, 1/16, 1/10, 1/6, 1/3, 1];
+const maxHelpLevel = pixelScales.length - 1;
 const solvedStages = Array(totalSteps).fill(false);
 const helpByStage = Array(totalSteps).fill(0);
 
@@ -96,10 +97,7 @@ function renderStepper() {
 function renderMedia(stage) {
   mediaGrid.innerHTML = "";
   const solved = solvedStages[currentIndex];
-  const blurValue = solved ? 0 : helpLevels[Math.min(currentHelpLevel, maxHelpLevel)];
   const showQuestion = !solved && currentHelpLevel === 0;
-  const brightness = solved ? 1 : currentHelpLevel === 0 ? 0.6 : 0.9;
-  const grayscale = solved ? 0 : currentHelpLevel === 0 ? 1 : 0;
 
   stage.media.forEach((item) => {
     const card = document.createElement("div");
@@ -126,8 +124,17 @@ function renderMedia(stage) {
     }
 
     if (!solved) {
-      mediaElement.style.filter = `grayscale(${grayscale}) blur(${blurValue}px) brightness(${brightness})`;
-      mediaElement.classList.add("blur");
+      if (currentHelpLevel === 0) {
+        mediaElement.classList.add("blur");
+      } else if (currentHelpLevel < maxHelpLevel) {
+        const scale = pixelScales[currentHelpLevel];
+        mediaElement.style.width = `${scale * 100}%`;
+        mediaElement.style.height = `${scale * 100}%`;
+        mediaElement.style.transform = `scale(${1 / scale})`;
+        mediaElement.style.transformOrigin = "0 0";
+        mediaElement.style.imageRendering = "pixelated";
+        mediaElement.style.objectFit = "cover";
+      }
     }
 
     card.appendChild(mediaElement);

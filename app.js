@@ -3,8 +3,7 @@ const totalSteps = data.length;
 let currentIndex = 0;
 let totalHelpUsed = 0;
 let currentHelpLevel = 0;
-// fraction of container size the image is rendered at before scaling back up
-const pixelScales = [0, 1/24, 1/16, 1/10, 1/6, 1/3, 1];
+const pixelScales = [1/40, 1/24, 1/16, 1/10, 1/6, 1/3, 1];
 const maxHelpLevel = pixelScales.length - 1;
 const solvedStages = Array(totalSteps).fill(false);
 const helpByStage = Array(totalSteps).fill(0);
@@ -94,46 +93,98 @@ function renderStepper() {
     .join("");
 }
 
+function drawPixelated(canvas, source, scale) {
+  const w = canvas.offsetWidth;
+  const h = canvas.offsetHeight;
+  if (!w || !h) return;
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext("2d");
+  ctx.imageSmoothingEnabled = false;
+
+  const sw = Math.max(1, Math.round(w * scale));
+  const sh = Math.max(1, Math.round(h * scale));
+
+  // Dark background (letterboxing)
+  ctx.fillStyle = "#3a0e25";
+  ctx.fillRect(0, 0, sw, sh);
+
+  // object-fit: contain — preserve aspect ratio
+  const natW = source.naturalWidth || source.videoWidth || 0;
+  const natH = source.naturalHeight || source.videoHeight || 0;
+  if (natW && natH) {
+    const ratio = Math.min(sw / natW, sh / natH);
+    const fw = Math.max(1, Math.round(natW * ratio));
+    const fh = Math.max(1, Math.round(natH * ratio));
+    ctx.drawImage(source, Math.round((sw - fw) / 2), Math.round((sh - fh) / 2), fw, fh);
+  } else {
+    ctx.drawImage(source, 0, 0, sw, sh);
+  }
+
+  // Scale the tiny sw×sh region back up to fill the canvas
+  ctx.drawImage(canvas, 0, 0, sw, sh, 0, 0, w, h);
+}
+
 function renderMedia(stage) {
   mediaGrid.innerHTML = "";
   const solved = solvedStages[currentIndex];
   const showQuestion = !solved && currentHelpLevel === 0;
+  const useCanvas = !solved && currentHelpLevel < maxHelpLevel;
+  const scale = useCanvas ? pixelScales[currentHelpLevel] : 1;
 
   stage.media.forEach((item) => {
     const card = document.createElement("div");
     card.className = `media-card ${solved ? "revealed" : ""}`;
 
     let mediaElement;
-    if (item.type === "video") {
-      mediaElement = document.createElement("video");
-      mediaElement.src = encodeResource(item.src);
-      mediaElement.loop = true;
-      mediaElement.muted = true;
-      mediaElement.autoplay = true;
-      mediaElement.playsInline = true;
-      mediaElement.preload = "metadata";
-      mediaElement.className = "media";
-      mediaElement.addEventListener("canplay", () => {
-        if (!mediaElement.paused) mediaElement.play().catch(() => {});
-      });
-    } else {
-      mediaElement = document.createElement("img");
-      mediaElement.src = encodeResource(item.src);
-      mediaElement.alt = stage.title;
-      mediaElement.className = "media";
-    }
 
-    if (!solved) {
-      if (currentHelpLevel === 0) {
-        mediaElement.classList.add("blur");
-      } else if (currentHelpLevel < maxHelpLevel) {
-        const scale = pixelScales[currentHelpLevel];
-        mediaElement.style.width = `${scale * 100}%`;
-        mediaElement.style.height = `${scale * 100}%`;
-        mediaElement.style.transform = `scale(${1 / scale})`;
-        mediaElement.style.transformOrigin = "0 0";
-        mediaElement.style.imageRendering = "pixelated";
-        mediaElement.style.objectFit = "cover";
+    if (item.type === "video") {
+      const video = document.createElement("video");
+      video.src = encodeResource(item.src);
+      video.loop = true;
+      video.muted = true;
+      video.autoplay = true;
+      video.playsInline = true;
+      video.preload = "metadata";
+
+      if (useCanvas) {
+        const canvas = document.createElement("canvas");
+        canvas.className = "media";
+        if (currentHelpLevel === 0) canvas.classList.add("blur");
+        video.play().catch(() => {});
+        requestAnimationFrame(function loop() {
+          if (!canvas.isConnected) return;
+          if (video.readyState >= 2) drawPixelated(canvas, video, scale);
+          requestAnimationFrame(loop);
+        });
+        mediaElement = canvas;
+      } else {
+        video.className = "media";
+        video.addEventListener("canplay", () => {
+          if (!video.paused) video.play().catch(() => {});
+        });
+        mediaElement = video;
+      }
+    } else {
+      if (useCanvas) {
+        const canvas = document.createElement("canvas");
+        canvas.className = "media";
+        if (currentHelpLevel === 0) canvas.classList.add("blur");
+        const img = new Image();
+        img.onload = function () {
+          requestAnimationFrame(function () {
+            if (!canvas.isConnected) return;
+            drawPixelated(canvas, img, scale);
+          });
+        };
+        img.src = encodeResource(item.src);
+        mediaElement = canvas;
+      } else {
+        const img = document.createElement("img");
+        img.src = encodeResource(item.src);
+        img.alt = stage.title;
+        img.className = "media";
+        mediaElement = img;
       }
     }
 

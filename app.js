@@ -66,7 +66,7 @@ function similarityScore(value, expected) {
   const target = normalizeText(expected);
   if (!source.length || !target.length) return 0;
   if (source === target) return 1;
-  if (target.includes(source) || source.includes(target)) return 0.95;
+  if (source.length >= target.length * 0.75 && (target.includes(source) || source.includes(target))) return 0.95;
   const distance = levenshtein(source, target);
   return 1 - distance / Math.max(source.length, target.length);
 }
@@ -76,7 +76,10 @@ function isCorrectAnswer(value, expected) {
   const normalizedExpected = normalizeText(expected);
   if (!normalizedValue.length) return false;
   if (normalizedValue === normalizedExpected) return true;
-  return similarityScore(normalizedValue, normalizedExpected) >= 0.7;
+  if (similarityScore(normalizedValue, normalizedExpected) >= 0.7) return true;
+  // Accept if the input matches any significant word of a multi-word answer
+  const words = normalizedExpected.split(" ").filter(w => w.length >= 3);
+  return words.length > 1 && words.some(word => similarityScore(normalizedValue, word) >= 0.7);
 }
 
 function renderStepper() {
